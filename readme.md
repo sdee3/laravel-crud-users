@@ -42,7 +42,7 @@ php artisan migrate
 php artisan db:seed
 
 # Add virtual host if using Apache
-# This project connects to the 'laravel-users.com' URL, so change the files accordingly.
+# This project connects to the 'laravel-users.com' URL, so change your files and settings accordingly.
 
 # If you get an error about an encryption key
 php artisan key:generate
