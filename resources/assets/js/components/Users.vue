@@ -1,9 +1,8 @@
 <template>
   <div>
     <h1 class="text-center">User CRUD App</h1>
-
-    <h2 class="text-center">{{formState}}</h2>
-    <form @submit.prevent="addUser()" class="m-5">
+    <h2 class="text-center mt-3">{{formState}}</h2>
+    <form @submit.prevent="addUser()" class="m-3">
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Full Name" v-model="user.fullname">
       </div>

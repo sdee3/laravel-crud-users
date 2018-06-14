@@ -47435,7 +47435,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -47552,12 +47551,14 @@ var render = function() {
   return _c("div", [
     _c("h1", { staticClass: "text-center" }, [_vm._v("User CRUD App")]),
     _vm._v(" "),
-    _c("h2", { staticClass: "text-center" }, [_vm._v(_vm._s(_vm.formState))]),
+    _c("h2", { staticClass: "text-center mt-3" }, [
+      _vm._v(_vm._s(_vm.formState))
+    ]),
     _vm._v(" "),
     _c(
       "form",
       {
-        staticClass: "m-5",
+        staticClass: "m-3",
         on: {
           submit: function($event) {
             $event.preventDefault()
