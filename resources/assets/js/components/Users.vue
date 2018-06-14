@@ -32,7 +32,7 @@
           <td>{{user.fullname}}</td>
           <td>{{user.email}}</td>
           <td>{{user.number}}</td>
-          <td><button class="btn btn-success" @click="editUser(user)">Edit User Info</button></td>
+          <td><button class="btn btn-primary" @click="editUser(user)">Edit User Info</button></td>
           <td><button class="btn btn-danger" @click="deleteUser(user.id)">Delete User</button></td>
         </tr>
       </tbody>
