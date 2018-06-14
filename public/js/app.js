@@ -47435,10 +47435,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      formState: '',
       users: [],
       user: {
         id: '',
@@ -47458,7 +47460,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     fetchUsers: function fetchUsers(userUrl) {
       var _this = this;
 
-      var vm = this;
+      this.formState = "Add user";
       userUrl = userUrl || '/api/users';
       fetch(userUrl).then(function (res) {
         return res.json();
@@ -47528,6 +47530,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
     },
     editUser: function editUser(user) {
+      this.formState = "Edit user";
       this.editFlag = true;
       this.user.id = user.user_id;
       this.user.user_id = user.id;
@@ -47547,12 +47550,14 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h2", { staticClass: "center" }, [_vm._v("User List")]),
+    _c("h1", { staticClass: "text-center" }, [_vm._v("User CRUD App")]),
+    _vm._v(" "),
+    _c("h2", { staticClass: "text-center" }, [_vm._v(_vm._s(_vm.formState))]),
     _vm._v(" "),
     _c(
       "form",
       {
-        staticClass: "mb-3",
+        staticClass: "m-5",
         on: {
           submit: function($event) {
             $event.preventDefault()
@@ -47639,13 +47644,16 @@ var render = function() {
         _vm._v(" "),
         _c(
           "button",
-          { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+          {
+            staticClass: "btn btn-block btn-primary",
+            attrs: { type: "submit" }
+          },
           [_vm._v("Save")]
         )
       ]
     ),
     _vm._v(" "),
-    _c("table", { staticClass: "table mb-5" }, [
+    _c("table", { staticClass: "table my-5" }, [
       _vm._m(0),
       _vm._v(" "),
       _c(

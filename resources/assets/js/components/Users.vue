@@ -1,8 +1,9 @@
 <template>
   <div>
-    <h2 class="center">User List</h2>
+    <h1 class="text-center">User CRUD App</h1>
 
-    <form @submit.prevent="addUser()" class="mb-3">
+    <h2 class="text-center">{{formState}}</h2>
+    <form @submit.prevent="addUser()" class="m-5">
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Full Name" v-model="user.fullname">
       </div>
@@ -12,10 +13,10 @@
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Phone Number (international format, e.g. +420 128 2381 101)" v-model="user.number">
       </div>
-      <button type="submit" class="btn btn-primary">Save</button>
+      <button type="submit" class="btn btn-block btn-primary">Save</button>
     </form>
     
-    <table class="table mb-5">
+    <table class="table my-5">
       <thead>
         <tr>
           <th>ID</th>
@@ -44,6 +45,7 @@
   export default {
     data() {
       return {
+        formState: '',
         users: [],
         user: {
           id: '',
@@ -61,7 +63,7 @@
 
     methods: {
       fetchUsers(userUrl) {
-        let vm = this;
+        this.formState = "Add user";
         userUrl = userUrl || '/api/users'
         fetch(userUrl)
           .then(res => res.json())
@@ -123,6 +125,7 @@
         }
       },
       editUser(user) {
+        this.formState = "Edit user";
         this.editFlag = true;
         this.user.id = user.user_id;
         this.user.user_id = user.id;

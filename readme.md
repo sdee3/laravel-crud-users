@@ -46,6 +46,9 @@ php artisan db:seed
 
 # If you get an error about an encryption key
 php artisan key:generate
+
+# Run the frontend
+npm run watch
 ```
 
 ## License
