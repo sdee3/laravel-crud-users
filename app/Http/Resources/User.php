@@ -21,4 +21,5 @@ class User extends JsonResource
             'number' => $this->number
         ];
     }
+
 }
