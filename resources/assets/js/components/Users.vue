@@ -14,7 +14,7 @@
       </div>
       <button type="submit" class="btn btn-block btn-primary">Save</button>
     </form>
-    
+
     <table class="table my-5">
       <thead>
         <tr>
@@ -102,7 +102,7 @@
             this.fetchUsers();
           })
           .catch(err => console.error(err));
-          
+
           this.editFlag = false;
         } else {
           fetch('api/user', {
